@@ -1,0 +1,12 @@
+.styleForm {
+	width: 500px;
+	margin: auto;
+}
+
+.form-group{
+	padding: 5px;
+}
+
+.panel {
+	background-color: darksalmon;
+}
