@@ -162,19 +162,18 @@ export default function Form() {
   function errorClass(error) {
     return(error.length === 0 ? '' : 'has-error');
   }
-
   
     return (
-      <form className="styleForm" onSubmit={handleSubmit}>
-        <h2>Sign up</h2>
-        
-        <div className="panel panel-">
-          <FormErrors formErrors={formErrors} />
-        </div>
+      <>
+      <div className="panel panel-error">
+        <FormErrors formErrors={formErrors} />
+      </div>  
 
+      <form className="styleForm" onSubmit={handleSubmit}>
+        
         <div className={`form-group ${errorClass(formErrors.firstName)}`}>
           <label htmlFor="firstName">Nombre</label>
-          <input type="text" required className="form-control" name="firstName"
+          <input type="text" required className="form-input" name="firstName"
             placeholder="Nombre"
             value={firstName}
             onChange={handleUserInput}  />
@@ -182,7 +181,7 @@ export default function Form() {
         
         <div className={`form-group ${errorClass(formErrors.secondName)}`}>
           <label htmlFor="secondName">Apellido</label>
-          <input type="text" required className="form-control" name="secondName"
+          <input type="text" required className="form-input" name="secondName"
             placeholder="Apellido"
             value={secondName}
             onChange={handleUserInput}  />
@@ -190,7 +189,7 @@ export default function Form() {
 
         <div className={`form-group ${errorClass(formErrors.email)}`}>
           <label htmlFor="email">Email</label>
-          <input type="text" required className="form-control" name="email"
+          <input type="text" required className="form-input" name="email"
             placeholder="Email"
             value={email}
             onChange={handleUserInput}  />
@@ -198,7 +197,7 @@ export default function Form() {
 
         <div className={`form-group ${errorClass(formErrors.charge)}`}>
           <label htmlFor="charge">Cargo</label>
-          <input type="text" required className="form-control" name="charge"
+          <input type="text" required className="form-input" name="charge"
             placeholder="Cargo"
             value={charge}
             onChange={handleUserInput}  />
@@ -206,7 +205,7 @@ export default function Form() {
 
         <div className={`form-group ${errorClass(formErrors.phone)}`}>
           <label htmlFor="phone">Teléfono</label>
-          <input type="phone" required className="form-control" name="phone"
+          <input type="phone" required className="form-input" name="phone"
             placeholder="teléfono"
             value={phone}
             onChange={handleUserInput}  />
@@ -214,7 +213,7 @@ export default function Form() {
 
         <div className={`form-group ${errorClass(formErrors.avatar)}`}>
           <label htmlFor="avatar">Avatar</label>
-          <input type="file" required className="form-control" name="avatar"
+          <input type="file" required className="form-input-file" name="avatar"
             placeholder=""
             value={avatar}
             onChange={handleUserInputAvatar}  />
@@ -222,7 +221,7 @@ export default function Form() {
         
         <div className={`form-group ${errorClass(formErrors.passw)}`}>
           <label htmlFor="password">Password</label>
-          <input type="password" className="form-control" name="password"
+          <input type="password" className="form-input" name="password"
             placeholder="Password"
             value={passw}
             onChange={handleUserInput}  />
@@ -230,7 +229,7 @@ export default function Form() {
 
         <div className={`form-group ${errorClass(formErrors.confPassw)}`}>
           <label htmlFor="confpassword">Confirmar </label>
-          <input type="password" className="form-control" name="confpassword"
+          <input type="password" className="form-input" name="confpassword"
             placeholder="Confirmar contraseña"
             value={confPassw}
             onChange={handleUserInput}  />
@@ -238,14 +237,14 @@ export default function Form() {
 
         <div className={`form-group ${errorClass(formErrors.sadmin)}`}>
           <label htmlFor="sadmin">Super admin</label>
-          <input type="checkbox" className="form-control" name="sadmin"
+          <input type="checkbox" className="form-input" name="sadmin"
             value={sadmin}
             onChange={handleUserInput}  />
         </div>
 
         <div className={`form-group ${errorClass(formErrors.jefe)}`}>
           <label htmlFor="esjefe">Es jefe</label>
-          <input type="checkbox" className="form-control" name="esjefe"
+          <input type="checkbox" className="form-input" name="esjefe"
             value={jefe}
             onChange={handleUserInput}  />
         </div>
@@ -253,6 +252,7 @@ export default function Form() {
         <button type="submit" className="" disabled={!formValid} >Registrar</button>
       
       </form>
+      </>
     )
   }
 
